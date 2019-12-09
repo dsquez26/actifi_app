@@ -1,3 +1,26 @@
+git clone https://github.com/dsquez26/actifi_app.git
+
+cd actifi_app
+
+cd client
+
+npm install
+
+ng build
+
+cd ..
+
+npm install
+
+npm run start
+
+localhost://3000
+
+
+
+
+
+
 # Welcome to the ActiFi Front End Code Audition
 
 ## Rules:
