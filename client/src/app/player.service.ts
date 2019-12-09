@@ -6,18 +6,16 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class PlayerService {
-
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
   getPlayers(): Observable<Player[]> {
-    return this.http.get<Player[]>('api/player-data')
+    return this.http.get<Player[]>('api/player-data');
   }
-
 }
 
 export interface Player {
-  team: string,
-  jersey_number: number,
-  name: string,
-  position: string
+  team: string;
+  jersey_number: number;
+  name: string;
+  position: string;
 }

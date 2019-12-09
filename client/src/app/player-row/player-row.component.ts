@@ -7,7 +7,6 @@ import { Player } from '../player.service';
   styleUrls: ['./player-row.component.scss']
 })
 export class PlayerRowComponent {
-
   @Input()
   player: Player;
 
@@ -16,8 +15,7 @@ export class PlayerRowComponent {
 
   edit = false;
 
-
-  constructor() { }
+  constructor() {}
 
   toggleEdit() {
     this.edit = !this.edit;

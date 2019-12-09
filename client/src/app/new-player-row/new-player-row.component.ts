@@ -6,7 +6,6 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./new-player-row.component.scss']
 })
 export class NewPlayerRowComponent implements OnInit {
-
   @Input()
   newPlayer;
 
@@ -15,10 +14,9 @@ export class NewPlayerRowComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
-  }
+  ngOnInit() { }
 
   save(jersey_number, name, team, position) {
-    this.newPlayer({jersey_number, name, team, position})
+    this.newPlayer({ jersey_number, name, team, position });
   }
 }

@@ -3,12 +3,10 @@
 <td [hidden]="!edit"><input #team [(value)]="player.team" /></td>
 <td [hidden]="!edit"><input #position [(value)]="player.position" /></td>
 
-
 <td [hidden]="edit">{{ player.jersey_number }}</td>
 <td [hidden]="edit">{{ player.name }}</td>
 <td [hidden]="edit">{{ player.team }}</td>
 <td [hidden]="edit">{{ player.position }}</td>
-
 
 <td>
   <div class="btn-group btn-group-sm" role="group">

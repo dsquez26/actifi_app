@@ -1,13 +1,11 @@
-
-  <td><input #newJerseyInput /></td>
-  <td><input #newName /></td>
-  <td><input #newTeam /></td>
-  <td><input #newPosition /></td>
-  <td>
-      <div class="btn-group btn-group-sm" role="group">
+<td><input #newJerseyInput /></td>
+<td><input #newName /></td>
+<td><input #newTeam /></td>
+<td><input #newPosition /></td>
+<td>
+  <div class="btn-group btn-group-sm" role="group">
     <button type="button" class="btn btn-primary"
       (click)="save(newJerseyInput.value, newName.value, newTeam.value, newPosition.value)">Save</button>
     <button type="button" class="btn btn-danger" (click)="cancelNewPlayer()">Cancel</button>
-    </div>
-  </td>
-
+  </div>
+</td>

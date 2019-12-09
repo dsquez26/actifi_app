@@ -9,7 +9,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { NewPlayerRowComponent } from './new-player-row/new-player-row.component';
 
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,4 +26,4 @@ import { NewPlayerRowComponent } from './new-player-row/new-player-row.component
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}
