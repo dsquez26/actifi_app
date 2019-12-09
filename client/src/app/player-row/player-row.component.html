@@ -1,11 +1,20 @@
+<td [hidden]="!edit"><input #jerseyInput [(value)]="player.jersey_number" /></td>
+<td [hidden]="!edit"><input #name [(value)]="player.name" /></td>
+<td [hidden]="!edit"><input #team [(value)]="player.team" /></td>
+<td [hidden]="!edit"><input #position [(value)]="player.position" /></td>
 
-    <td>{{ player.jersey_number }}</td>
-    <td>{{ player.name }}</td>
-    <td>{{ player.team }}</td>
-    <td>{{ player.position }}</td>
-    <td>
-        <div class="btn-group btn-group-sm" role="group">
-            <button type="button" class="btn btn-primary">Edit</button>
-            <button type="button" class="btn btn-danger">Delete</button>
-        </div>
-    </td>
+
+<td [hidden]="edit">{{ player.jersey_number }}</td>
+<td [hidden]="edit">{{ player.name }}</td>
+<td [hidden]="edit">{{ player.team }}</td>
+<td [hidden]="edit">{{ player.position }}</td>
+
+
+<td>
+  <div class="btn-group btn-group-sm" role="group">
+    <button [hidden]="edit" type="button" class="btn btn-primary" (click)="toggleEdit()">Edit</button>
+    <button [hidden]="!edit" type="button" class="btn btn-primary" (click)="save(jerseyInput.value, name.value, team.value, position.value)">Save</button>
+    <button type="button" class="btn btn-danger" (click)="deletePlayer(player)">Delete</button>
+  </div>
+</td>
+

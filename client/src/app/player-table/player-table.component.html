@@ -1,5 +1,5 @@
 
-          <table class="table table-bordered table-striped table-hover table-sm">
+         <table class="table table-bordered table-striped table-hover table-sm">
             <thead>
                 <tr>
                     <th scope="col">Jersey Number</th>
@@ -9,7 +9,10 @@
                     <th scope="col" style="width:1px;white-space:nowrap;">Actions</th>
                 </tr>
             </thead>
-            <tbody *ngFor="let player of players">
-                <tr app-player-row [player]="player"></tr>
+            <tbody *ngIf="showNewRow">
+              <tr app-new-player-row [newPlayer]="newPlayer" [cancelNewPlayer]="cancelNewPlayer"></tr>
+            </tbody>
+            <tbody *ngFor="let player of players | paginate: { itemsPerPage: pageSize, currentPage: page}">
+              <tr app-player-row [player]="player" [deletePlayer]="deletePlayer"></tr>
             </tbody>
         </table>

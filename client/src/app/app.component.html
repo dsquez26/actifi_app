@@ -5,65 +5,72 @@
 <div class="container">
 
   <div class="row">
-      <div class="col">
-          <h1 class="display-4">Fantasy League Players</h1>
-      </div>
+    <div class="col">
+      <h1 class="display-4">Fantasy League Players</h1>
+    </div>
   </div>
 
   <hr>
 
   <div class="row">
 
-      <div class="col">
-          <button class="btn btn-primary">Add Player</button>
-      </div>
+    <div class="col">
 
-      <div class="col">
+      <button class="btn btn-primary" (click)="toggleShowNewRow()">Add Player</button>
+    </div>
 
-          <ul class="pagination justify-content-end">
-              <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-              <li class="page-item"><a class="page-link" href="#">1</a></li>
-              <li class="page-item"><a class="page-link" href="#">2</a></li>
-              <li class="page-item"><a class="page-link" href="#">3</a></li>
-              <li class="page-item"><a class="page-link" href="#">Next</a></li>
-          </ul>
+    <div class="col">
+      <pagination-controls (pageChange)="changePage($event)"></pagination-controls>
+      <ul class="pagination justify-content-end">
+        <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+        <li class="page-item"><a class="page-link" href="#">1</a></li>
+        <li class="page-item"><a class="page-link" href="#">2</a></li>
+        <li class="page-item"><a class="page-link" href="#">3</a></li>
+        <li class="page-item"><a class="page-link" href="#">Next</a></li>
+      </ul>
 
-      </div>
+    </div>
 
   </div>
 
   <div class="row">
 
-      <div class="col">
-            <app-player-table [players]="players"></app-player-table>
-      </div>
+    <div class="col">
+      <app-player-table
+      [players]="players"
+      [deletePlayer]="deletePlayer"
+       [page]="page"
+       [pageSize]="pageSize"
+       [showNewRow]="showNewRow" [newPlayer]="newPlayer" [cancelNewPlayer]="toggleShowNewRow">
+      </app-player-table>
+    </div>
 
-  </div> 
+  </div>
 
   <div class="row">
 
-      <div class="col">
+    <div class="col">
 
-          <label class="d-inline-block">
-              <select class="form-control form-control-sm d-inline-block" style="width: auto;">
-                  <option value="10">10</option>
-                  <option value="50">50</option>
-                  <option value="100">100</option>
-              </select> results per page</label>
+      <label class="d-inline-block">
+        <select (change)="changePageSize($event)" class="form-control form-control-sm d-inline-block" style="width: auto;">
+          <option value="10">10</option>
+          <option value="50">50</option>
+          <option value="100">100</option>
+        </select> results per page</label>
 
-      </div>
+    </div>
 
-      <div class="col">
+    <div class="col">
+      <pagination-controls (pageChange)="changePage($event)"></pagination-controls>
+      <ul class="pagination justify-content-end">
+        <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+        <li class="page-item"><a class="page-link" href="#">1</a></li>
+        <li class="page-item"><a class="page-link" href="#">2</a></li>
+        <li class="page-item"><a class="page-link" href="#">3</a></li>
+        <li class="page-item"><a class="page-link" href="#">Next</a></li>
+      </ul>
 
-          <ul class="pagination justify-content-end">
-              <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-              <li class="page-item"><a class="page-link" href="#">1</a></li>
-              <li class="page-item"><a class="page-link" href="#">2</a></li>
-              <li class="page-item"><a class="page-link" href="#">3</a></li>
-              <li class="page-item"><a class="page-link" href="#">Next</a></li>
-          </ul>
-
-      </div>
+    </div>
 
   </div>
 

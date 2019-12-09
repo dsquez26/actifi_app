@@ -7,6 +7,23 @@ import { Player } from '../player.service';
   styleUrls: ['./player-table.component.scss']
 })
 export class PlayerTableComponent implements OnInit {
+  @Input()
+  page
+
+  @Input()
+  showNewRow
+
+  @Input()
+  newPlayer
+
+  @Input()
+  cancelNewPlayer
+
+  @Input()
+  pageSize
+
+  @Input()
+  deletePlayer
 
   @Input()
   players: Player[]
@@ -15,9 +32,9 @@ export class PlayerTableComponent implements OnInit {
 
   ngOnChanges(){
   }
-  
+
   ngOnInit() {
-    
+
   }
 
 }

@@ -7,8 +7,8 @@ import { Observable } from 'rxjs';
 })
 export class PlayerService {
 
-  constructor(private http: HttpClient) { } 
-  
+  constructor(private http: HttpClient) { }
+
   getPlayers(): Observable<Player[]> {
     return this.http.get<Player[]>('api/player-data')
   }

@@ -11,5 +11,23 @@ export class PlayerRowComponent {
   @Input()
   player: Player;
 
+  @Input()
+  deletePlayer: (Player) => void;
+
+  edit = false;
+
+
   constructor() { }
+
+  toggleEdit() {
+    this.edit = !this.edit;
+  }
+
+  save(jerseyNumber, name, team, position) {
+    this.player.jersey_number = jerseyNumber;
+    this.player.name = name;
+    this.player.position = position;
+    this.player.team = team;
+    this.toggleEdit();
+  }
 }
